@@ -24,7 +24,7 @@ A lightweight WordPress plugin that manages and displays team members.
 2. Fill in the fields:
    - **Full Name** → Member's full name
    - **Bio** (editor area) → Member's bio
-   - **Job Title** (right sidebar) → Job title or role (e.g. *Lead Developer*)
+   - **Job Title** (below the editor) → Job title or role (e.g. *Lead Developer*)
    - **Profile Picture** (right sidebar) → Member's profile picture
 3. Publish the post.
 
@@ -48,8 +48,21 @@ Place the shortcode anywhere on a page or post:
 
 ### Examples
 
-```
+```text
 [team_members number="4"]
 [team_members image_position="bottom" show_all_button="false"]
 [team_members number="3" image_position="top" show_all_button="true"]
 ```
+
+---
+
+## Design Selection
+
+We use a simple and flexible layout approach that changes depending on the `image_position` parameter (`top` or `bottom`). The template logic (`templates/team-members-list.php`) toggles rendering the profile picture either before or after the member's text details. By managing everything in a centralized template file, it maintains clean code and avoids duplication while easily letting administrators alter the presentation via shortcode attributes. This ensures you can seamlessly switch the focal point of the team member block to either the name or their picture depending on the context.
+
+---
+
+## Bonus Features
+
+- **Object-Oriented Architecture**: The complete backend foundation is modular and built on strict Object-Oriented principles. Responsibilities are compartmentalized into distinct utility classes (e.g., `DLBL_Post_Type`, `DLBL_Meta_Box`, `DLBL_Shortcode`), preventing pollution of the global namespace and making future expansions far simpler.
+- **Archive Pagination**: Implemented complete pagination handling on the archive page, allowing smooth navigation when there are numerous team members. The default items per page on the archive is natively controlled via your WordPress **Settings → Reading** ("Blog pages show at most").
