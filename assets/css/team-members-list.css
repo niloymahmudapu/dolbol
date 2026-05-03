@@ -1,0 +1,60 @@
+.dlbl-team-members-list {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 12px;
+
+	.dlbl-team-member {
+		flex: 1;
+		background-color: #ebeef1;
+		padding: 24px;
+		padding-top: 12px;
+		border-radius: 12px;
+		min-width: 250px;
+	}
+
+	.dlbl-team-member-image img {
+		width: 160px;
+		max-width: 100%;
+		height: auto;
+		border-radius: 24px;
+		margin: 24px 0 0 0;
+	}
+
+	.dlbl-team-member-name {
+		margin: 12px 0 0 0;
+
+		a {
+			text-decoration: none !important;
+			text-underline-offset: 4px;
+			color: #333;
+	
+			&:hover {
+				text-decoration: underline !important;
+			}
+		}
+	}
+
+	.dlbl-team-member-job-title {
+		color: #777;
+		font-weight: 500;
+	}
+}
+
+.dlbl-team-members-footer {
+	margin-top: 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dlbl-team-members-see-all {
+	text-decoration: none !important;
+	color: white;
+	background-color: #0073aa;
+	padding: 8px 16px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
