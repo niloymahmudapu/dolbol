@@ -15,13 +15,13 @@ get_header();
 			<?php endif; ?>
 
 			<div class="dlbl-single-content">
-				<h1 class="dlbl-single-name"><?php echo get_the_title() ?: '(No name)' ?></h1>
+				<h1 class="dlbl-single-name"><?php echo get_the_title() ?: esc_html__( '(No name)', 'dolbol' ) ?></h1>
 
 				<?php $position = get_post_meta( get_the_ID(), DLBL_Post_Type::JOB_TITLE, true ); ?>
-				<p class="dlbl-single-job-title"><?php echo esc_html( $position ) ?: '(No job title)' ?></p>
+				<p class="dlbl-single-job-title"><?php echo esc_html( $position ) ?: esc_html__( '(No job title)', 'dolbol' ) ?></p>
 
 				<div class="dlbl-single-bio">
-					<?php echo get_the_content() ?: '(No bio)'; ?>
+					<?php echo get_the_content() ?: esc_html__( '(No bio)', 'dolbol' ); ?>
 				</div>
 			</div>
 

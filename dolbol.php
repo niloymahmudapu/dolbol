@@ -46,10 +46,15 @@ final class Dolbol {
 	}
 
 	private function __construct() {
+		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
 		new DLBL_Post_Type();
 		new DLBL_Meta_Box();
 		new DLBL_Shortcode();
 		new DLBL_Scripts_And_Styles();
+	}
+
+	public function load_textdomain(): void {
+		load_plugin_textdomain( 'dolbol', false, basename( DLBL_DIR ) . '/languages' );
 	}
 }
 

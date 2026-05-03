@@ -13,7 +13,7 @@ class DLBL_Meta_Box {
     public function add_meta_box(): void {
         add_meta_box(
             DLBL_Post_Type::JOB_TITLE,
-            'Job Title',
+            __( 'Job Title', 'dolbol' ),
             [ $this, 'render_meta_box' ],
             DLBL_Post_Type::POST_TYPE,
             'normal',
@@ -39,7 +39,7 @@ class DLBL_Meta_Box {
 
         ?>
         <div>
-            <label for="dlbl_job_title" style="display: block; margin-bottom: 4px;">Job Title</label>
+            <label for="dlbl_job_title" style="display: block; margin-bottom: 4px;"><?php esc_html_e( 'Job Title', 'dolbol' ); ?></label>
             <input type="text" id="dlbl_job_title" name="dlbl_job_title" value="<?php echo esc_attr( $job_title ); ?>" class="widefat">
         </div>
         <?php
