@@ -33,6 +33,10 @@ class DLBL_Shortcode {
             return DLBL_DIR . 'templates/single-team-member.php';
         }
 
+        if ( is_post_type_archive( DLBL_Post_Type::POST_TYPE ) ) {
+            return DLBL_DIR . 'templates/archive-team-members.php';
+        }
+
         return $template;
     }
 }

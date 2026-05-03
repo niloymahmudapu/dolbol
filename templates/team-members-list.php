@@ -49,23 +49,11 @@ DLBL_Scripts_And_Styles::enqueue_team_members_list_styles();
             <?php endwhile; ?>
         </div>
         <div class="dlbl-team-members-footer">
-            <?php if ( true === $show_all_button ) : ?>
+            <?php if ( false !== $show_all_button ) : ?>
                 <a class="dlbl-team-members-see-all" href="<?php echo esc_url( get_post_type_archive_link( DLBL_Post_Type::POST_TYPE ) ); ?>">
                     <?php echo esc_html__( 'See All', 'dolbol' ); ?>
-                    <span class="dashicons dashicons-arrow-right-alt2"></span>
+                    <span class="dashicons dashicons-arrow-right-alt"></span>
                 </a>
-            <?php else: ?>
-                <div></div>
-            <?php endif; ?>
-            <?php if ( $query->max_num_pages > 1 ) : ?>
-                <div class="dlbl-team-members-pagination">
-                    <?php
-                    echo paginate_links( [
-                        'total'   => $query->max_num_pages,
-                        'current' => $paged,
-                    ] );
-                    ?>
-                </div>
             <?php endif; ?>
         </div>
         <?php wp_reset_postdata(); ?>
